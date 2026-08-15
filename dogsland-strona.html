@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psigody Wrocław | Behawiorystka i trenerka psów — pozytywna komunikacja</title>
+<style>
+:root{
+  --bg:#FAF6EE;
+  --bg-soft:#F2E9D8;
+  --card:#FFFFFF;
+  --border:#E7DBC3;
+  --text:#3A2C22;
+  --text-2:#7A6858;
+  --text-3:#B2A28F;
+  --accent:#BE8148;
+  --accent-dark:#9C6631;
+  --accent-2:#6B4380;
+  --pink:#C2478E;
+  --sage:#7C9473;
+  --gold:#D9A84E;
+  --shadow:0 2px 18px rgba(58,44,34,0.08);
+  --shadow-lg:0 16px 46px rgba(58,44,34,0.16);
+  --radius:16px;
+  --maxw:1120px;
+  --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-logo:"Segoe Script","Brush Script MT",cursive;
+  --font-display:Georgia,"Iowan Old Style","Times New Roman",serif;
+}
+:root[data-theme="dark"]{
+  --bg:#181310;
+  --bg-soft:#221B15;
+  --card:#241D18;
+  --border:#3A2F26;
+  --text:#F2EAE0;
+  --text-2:#BDAC9B;
+  --text-3:#8A7A69;
+  --shadow:0 2px 18px rgba(0,0,0,0.35);
+  --shadow-lg:0 16px 46px rgba(0,0,0,0.55);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);-webkit-font-smoothing:antialiased;transition:background .25s ease,color .25s ease;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+img,svg{display:block;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+::selection{background:var(--accent-2);color:#fff;}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent-dark);margin-bottom:8px;display:block;}
+.section-title{font-size:clamp(24px,3.4vw,34px);font-weight:800;margin:0 0 14px;letter-spacing:-.3px;}
+.section-lead{font-size:15.5px;color:var(--text-2);max-width:620px;line-height:1.65;margin-bottom:36px;}
+.section{padding:74px 0;}
+.section.alt{background:var(--bg-soft);}
+.btn{padding:13px 24px;border-radius:12px;font-size:14.5px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:transform .12s ease,filter .15s ease,box-shadow .15s ease;}
+.btn:active{transform:scale(.97);}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 20px rgba(193,105,74,.28);}
+.btn-primary:hover{filter:brightness(1.07);}
+.btn-outline{background:transparent;border:1.5px solid var(--border);color:var(--text);}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent-dark);}
+.btn-block{width:100%;justify-content:center;}
+
+/* ---------- NAV ---------- */
+#topnav{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--bg) 90%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);transition:box-shadow .2s ease;}
+#topnav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.06);}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:10px;}
+.logo{font-family:var(--font-logo);font-size:27px;color:var(--accent-dark);display:flex;align-items:center;gap:8px;white-space:nowrap;}
+.logo-avatar{width:32px;height:32px;border-radius:50%;object-fit:cover;object-position:center 32%;flex:none;box-shadow:0 0 0 2px var(--card),0 0 0 3px var(--border);}
+.logo small{font-family:var(--font-body);font-size:11px;font-weight:700;letter-spacing:1px;color:var(--text-2);text-transform:uppercase;margin-left:2px;}
+.nav-links{display:none;gap:28px;margin-left:44px;}
+.nav-links a{font-size:14px;font-weight:600;color:var(--text-2);}
+.nav-links a:hover{color:var(--accent-dark);}
+@media(min-width:960px){.nav-links{display:flex;}}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;}
+.icon-btn{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.icon-btn:hover{background:var(--bg-soft);}
+.hamburger{display:flex;font-size:22px;}
+@media(min-width:960px){.hamburger{display:none;}}
+#mobileMenu{display:none;flex-direction:column;padding:8px 24px 18px;border-bottom:1px solid var(--border);background:var(--bg);}
+#mobileMenu.show{display:flex;}
+#mobileMenu a{padding:11px 0;font-size:15px;font-weight:600;border-bottom:1px solid var(--border);}
+#mobileMenu a:last-child{border-bottom:none;}
+
+/* ---------- HERO ---------- */
+#hero{padding:64px 0 30px;position:relative;overflow:hidden;}
+.hero-grid{display:flex;gap:48px;align-items:center;flex-wrap:wrap-reverse;}
+.hero-copy{flex:1;min-width:300px;}
+.hero-copy h1{font-family:var(--font-display);font-style:italic;font-size:clamp(32px,5vw,52px);line-height:1.16;font-weight:700;letter-spacing:-.3px;margin:0 0 18px;color:var(--text);}
+.hero-copy h1 em{font-style:italic;font-family:var(--font-display);color:var(--accent-dark);}
+.hero-copy p{font-size:16px;color:var(--text-2);line-height:1.65;max-width:480px;margin:0 0 26px;}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px;}
+.hero-stats{display:flex;gap:30px;flex-wrap:wrap;}
+.hero-stat b{display:block;font-size:22px;font-weight:800;color:var(--accent-dark);}
+.hero-stat span{font-size:12.5px;color:var(--text-2);}
+.hero-visual{flex:1;min-width:280px;display:flex;justify-content:center;position:relative;}
+.hero-swirl{position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:420px;max-width:130%;z-index:0;opacity:.5;pointer-events:none;}
+:root[data-theme="dark"] .hero-swirl{opacity:.3;}
+.hero-photo-frame{
+  width:320px;max-width:100%;aspect-ratio:4/5;border-radius:22px;
+  background:linear-gradient(155deg,#F4DFB0 0%,#EEC9C6 48%,#D6C3E6 100%);
+  box-shadow:var(--shadow-lg);position:relative;z-index:1;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-photo-frame .ph-icon{font-size:86px;opacity:.55;filter:saturate(.9);}
+.hero-photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center 18%;}
+.hero-photo-frame .ph-caption{
+  position:absolute;bottom:16px;left:16px;right:16px;background:rgba(255,255,255,.82);
+  border-radius:11px;padding:8px 12px;font-size:11.5px;font-weight:700;color:var(--text-2);
+  text-align:center;backdrop-filter:blur(3px);
+}
+
+/* ---------- LOGOS / TRUST STRIP ---------- */
+.trust-strip{padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.trust-inner{display:flex;flex-wrap:wrap;gap:18px 34px;justify-content:center;align-items:center;font-size:13px;color:var(--text-2);font-weight:600;}
+
+/* ---------- ABOUT / METODA ---------- */
+.about-grid{display:flex;gap:44px;align-items:flex-start;flex-wrap:wrap;}
+.about-photo{flex:none;width:230px;height:230px;border-radius:var(--radius);background:linear-gradient(160deg,#F4DFB0,#EEC9C6 55%,#D6C3E6);display:flex;align-items:center;justify-content:center;font-size:78px;box-shadow:var(--shadow);position:relative;}
+.about-photo .ph-caption{position:absolute;bottom:12px;left:12px;right:12px;background:rgba(255,255,255,.82);border-radius:10px;padding:6px 10px;font-size:10.5px;font-weight:700;color:var(--text-2);text-align:center;}
+.about-copy{flex:1;min-width:300px;}
+.about-copy p{font-size:15px;line-height:1.75;color:var(--text-2);margin:0 0 16px;max-width:640px;}
+.principles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px;}
+@media(min-width:700px){.principles-grid{grid-template-columns:repeat(4,1fr);}}
+.principle-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 16px;text-align:center;box-shadow:var(--shadow);transition:transform .15s ease;}
+.principle-card:hover{transform:translateY(-4px);}
+.principle-emoji{font-size:28px;margin-bottom:8px;}
+.principle-title{font-size:13.5px;font-weight:700;margin-bottom:5px;}
+.principle-text{font-size:12.5px;color:var(--text-2);line-height:1.5;}
+
+/* ---------- PROCESS ---------- */
+.process-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+@media(min-width:760px){.process-grid{grid-template-columns:repeat(4,1fr);}}
+.process-card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px 20px;box-shadow:var(--shadow);}
+.process-num{position:absolute;top:-14px;left:20px;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;box-shadow:0 4px 10px rgba(193,105,74,.4);}
+.process-emoji{font-size:26px;margin:10px 0 10px;}
+.process-title{font-weight:700;font-size:14.5px;margin-bottom:6px;}
+.process-text{font-size:13px;color:var(--text-2);line-height:1.55;}
+
+/* ---------- SERVICES ---------- */
+.services-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+@media(min-width:640px){.services-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:1000px){.services-grid{grid-template-columns:repeat(3,1fr);}}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:9px;transition:transform .15s ease,box-shadow .15s ease;}
+.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.service-emoji{font-size:30px;}
+.service-name{font-size:16.5px;font-weight:700;}
+.service-desc{font-size:13.5px;color:var(--text-2);line-height:1.55;flex:1;}
+.service-meta{display:flex;justify-content:space-between;font-size:12.5px;color:var(--text-3);margin-top:2px;}
+.service-price{font-weight:800;color:var(--accent-dark);}
+.service-card .btn{margin-top:8px;justify-content:center;}
+
+/* ---------- TESTIMONIALS ---------- */
+.testi-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+@media(min-width:640px){.testi-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:1000px){.testi-grid{grid-template-columns:repeat(3,1fr);}}
+.testi-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);display:none;}
+.testi-card.show{display:block;}
+.testi-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.testi-avatar{width:38px;height:38px;border-radius:50%;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:var(--accent-dark);}
+.testi-name{font-weight:700;font-size:14px;}
+.testi-dog{font-size:12px;color:var(--text-2);}
+.testi-stars{color:var(--gold);font-size:13px;margin-bottom:8px;}
+.testi-text{font-size:13.5px;line-height:1.6;color:var(--text);}
+.testi-more{text-align:center;margin-top:24px;}
+
+/* ---------- INSTAGRAM STRIP ---------- */
+.ig-strip{padding:60px 0;text-align:center;}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;max-width:560px;margin:26px auto 22px;}
+@media(min-width:600px){.ig-grid{grid-template-columns:repeat(6,1fr);gap:10px;max-width:820px;}}
+.ig-tile{aspect-ratio:1/1;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;}
+.ig-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+/* ---------- BLOG ---------- */
+.blog-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+@media(min-width:640px){.blog-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:1000px){.blog-grid{grid-template-columns:repeat(4,1fr);}}
+.blog-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .15s ease,box-shadow .15s ease;cursor:pointer;}
+.blog-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.blog-thumb{height:120px;display:flex;align-items:center;justify-content:center;font-size:40px;color:#fff;}
+.blog-body{padding:16px;flex:1;display:flex;flex-direction:column;gap:8px;}
+.blog-topic{font-size:14.5px;font-weight:700;}
+.blog-excerpt{font-size:12.5px;color:var(--text-2);line-height:1.5;flex:1;}
+.blog-readmore{font-size:12.5px;font-weight:700;color:var(--accent-dark);}
+
+/* ---------- FAQ ---------- */
+.faq-list{max-width:720px;margin:0 auto;}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+.faq-q{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:700;font-size:14.5px;}
+.faq-q .chev{transition:transform .2s ease;color:var(--text-3);flex:none;}
+.faq-item.open .faq-q .chev{transform:rotate(180deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+.faq-item.open .faq-a{max-height:220px;}
+.faq-a-inner{padding:0 20px 18px;font-size:13.5px;color:var(--text-2);line-height:1.6;}
+
+/* ---------- CONTACT ---------- */
+.contact-grid{display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;}
+.contact-info{flex:1;min-width:280px;}
+.contact-info h3{font-size:18px;margin:0 0 14px;}
+.contact-row{display:flex;gap:10px;font-size:14px;margin-bottom:12px;color:var(--text-2);}
+.contact-map{margin-top:18px;height:180px;border-radius:var(--radius);border:1px solid var(--border);
+  background:radial-gradient(circle at 50% 45%, rgba(193,105,74,0.22), transparent 42%),
+    repeating-linear-gradient(0deg, var(--bg-soft), var(--bg-soft) 22px, var(--border) 22px, var(--border) 23px),
+    repeating-linear-gradient(90deg, var(--bg-soft), var(--bg-soft) 22px, var(--border) 22px, var(--border) 23px);
+  display:flex;align-items:center;justify-content:center;font-size:30px;
+}
+.hours-table{width:100%;font-size:13px;margin-top:14px;border-collapse:collapse;max-width:280px;}
+.hours-table td{padding:4px 0;color:var(--text-2);}
+.hours-table td:last-child{text-align:right;color:var(--text);font-weight:700;}
+.contact-form-wrap{flex:1;min-width:300px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);}
+.form-row{margin-bottom:14px;}
+.form-row label{font-size:11.5px;font-weight:700;color:var(--text-2);text-transform:uppercase;letter-spacing:.4px;display:block;margin-bottom:5px;}
+.form-row input,.form-row select,.form-row textarea{width:100%;padding:11px 13px;border-radius:10px;border:1px solid var(--border);background:var(--bg-soft);color:var(--text);font-size:14px;font-family:inherit;outline:none;}
+.form-row input:focus,.form-row select:focus,.form-row textarea:focus{border-color:var(--accent-2);}
+.form-row textarea{resize:vertical;min-height:90px;}
+.slot-chips{display:flex;gap:8px;flex-wrap:wrap;}
+.slot-chip{padding:8px 12px;border-radius:9px;border:1px solid var(--border);background:var(--bg-soft);font-size:12.5px;font-weight:700;color:var(--text);}
+.slot-chip:hover{border-color:var(--accent-2);}
+.slot-chip.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+.form-success{display:none;text-align:center;padding:30px 10px;}
+.form-success.show{display:block;}
+.form-success .big{font-size:44px;margin-bottom:12px;}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--bg-soft);border-top:1px solid var(--border);padding:46px 0 26px;}
+.footer-grid{display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between;margin-bottom:30px;}
+.footer-logo{font-family:var(--font-logo);font-size:22px;color:var(--accent-dark);margin-bottom:8px;}
+.footer-col h4{font-size:13px;text-transform:uppercase;letter-spacing:.6px;margin:0 0 12px;color:var(--text-2);}
+.footer-col a{display:block;font-size:13.5px;margin-bottom:9px;color:var(--text-2);}
+.footer-col a:hover{color:var(--accent-dark);}
+.footer-bottom{text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--border);padding-top:20px;}
+
+/* ---------- MODALS / TOAST / MISC ---------- */
+.modal-overlay{position:fixed;inset:0;background:rgba(20,14,10,.6);display:none;align-items:center;justify-content:center;z-index:200;padding:16px;}
+.modal-overlay.show{display:flex;}
+.modal-box{background:var(--card);border-radius:16px;max-width:560px;width:100%;max-height:86vh;overflow-y:auto;box-shadow:var(--shadow-lg);position:relative;}
+.modal-close{position:absolute;top:14px;right:16px;font-size:20px;width:34px;height:34px;border-radius:50%;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;}
+.modal-inner{padding:32px;}
+.modal-thumb{font-size:44px;margin-bottom:14px;}
+.modal-inner h2{font-size:20px;margin:0 0 6px;}
+.modal-tags{color:var(--accent-2);font-size:12.5px;margin-bottom:16px;}
+.modal-inner p{font-size:14.5px;line-height:1.7;color:var(--text-2);}
+
+#toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--text);color:var(--bg);padding:12px 22px;border-radius:26px;font-size:13.5px;font-weight:700;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:all .25s ease;z-index:300;white-space:nowrap;}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+#backTop{position:fixed;bottom:22px;right:22px;width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transform:translateY(10px);transition:all .25s ease;z-index:60;}
+#backTop.show{opacity:1;pointer-events:auto;transform:translateY(0);}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<nav id="topnav">
+  <div class="nav-inner">
+    <a class="logo" href="#hero"><img class="logo-avatar" src="assets/hero-photo.jpg" alt="Psigody"> Psigody <small>Wrocław</small></a>
+    <div class="nav-links">
+      <a href="#metoda">O mnie</a>
+      <a href="#uslugi">Usługi</a>
+      <a href="#proces">Jak to działa</a>
+      <a href="#opinie">Opinie</a>
+      <a href="#blog">Porady</a>
+      <a href="#faq">FAQ</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn" title="Przełącz motyw" onclick="toggleTheme()" id="themeBtn">🌙</button>
+      <a href="#kontakt" class="btn btn-primary" style="display:none;" id="navCta">Umów wizytę</a>
+      <button class="icon-btn hamburger" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </div>
+  <div id="mobileMenu">
+    <a href="#metoda" onclick="closeMobileMenu()">O mnie</a>
+    <a href="#uslugi" onclick="closeMobileMenu()">Usługi</a>
+    <a href="#proces" onclick="closeMobileMenu()">Jak to działa</a>
+    <a href="#opinie" onclick="closeMobileMenu()">Opinie</a>
+    <a href="#blog" onclick="closeMobileMenu()">Porady</a>
+    <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+    <a href="#kontakt" onclick="closeMobileMenu()">Kontakt</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">🌿 Trening bez strachu i przymusu</span>
+      <h1>Zbuduj więź opartą&nbsp;na <em>zaufaniu</em>, nie na strachu</h1>
+      <p>Jestem behawiorystką i trenerką psów we Wrocławiu. Uczę psy i ich opiekunów lepszej komunikacji — metodami pozytywnego wzmacniania, bez kar, krzyku i przymusu.</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" onclick="scrollToId('kontakt')">✉️ Umów konsultację</button>
+        <button class="btn btn-outline" onclick="scrollToId('uslugi')">Zobacz usługi</button>
+      </div>
+      <div class="hero-stats" id="heroStats"></div>
+    </div>
+    <div class="hero-visual">
+      <svg class="hero-swirl" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 180C70 60 180 20 260 55C320 82 300 150 240 145C195 141 200 95 250 90" stroke="#9C6631" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="355" cy="60" r="3" fill="#C2478E"/>
+        <circle cx="30" cy="230" r="2" fill="#6B4380"/>
+      </svg>
+      <div class="hero-photo-frame">
+        <img src="assets/hero-main.jpg" alt="Behawiorystka ze swoim psem">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap trust-inner">
+    <span>🎓 Certyfikowana trenerka force-free</span>
+    <span>🩺 Fitness i fizjoterapia psów</span>
+    <span>📍 Wrocław i okolice</span>
+    <span>💻 Konsultacje online</span>
+    <span>🐕 Psy w każdym wieku</span>
+  </div>
+</div>
+
+<section class="section" id="metoda">
+  <div class="wrap">
+    <span class="eyebrow">Moja metoda</span>
+    <h2 class="section-title" id="metodaTitle">Moja metoda</h2>
+    <p class="section-lead" id="metodaIntro"></p>
+    <div class="about-grid">
+      <div class="about-photo">🐕‍🦺<div class="ph-caption">📷 Twoje zdjęcie</div></div>
+      <div class="about-copy" id="metodaParagraphs"></div>
+    </div>
+    <div class="principles-grid" id="principlesGrid"></div>
+  </div>
+</section>
+
+<section class="section alt" id="proces">
+  <div class="wrap">
+    <span class="eyebrow">Jak wygląda współpraca</span>
+    <h2 class="section-title">Cztery proste kroki</h2>
+    <p class="section-lead">Od pierwszej wiadomości do spokojniejszych spacerów — tak zwykle wygląda nasza współpraca.</p>
+    <div class="process-grid" id="processGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="uslugi">
+  <div class="wrap">
+    <span class="eyebrow">Oferta</span>
+    <h2 class="section-title">Usługi</h2>
+    <p class="section-lead">Od pojedynczej konsultacji po długofalową pracę z trudnymi zachowaniami — wybierz to, czego teraz potrzebujecie.</p>
+    <div class="services-grid" id="servicesGrid"></div>
+  </div>
+</section>
+
+<section class="section alt" id="opinie">
+  <div class="wrap">
+    <span class="eyebrow">Opinie</span>
+    <h2 class="section-title">Co mówią opiekunowie</h2>
+    <p class="section-lead">Kilka historii psów i ich ludzi, z którymi miałam przyjemność pracować.</p>
+    <div class="testi-grid" id="testiGrid"></div>
+    <div class="testi-more"><button class="btn btn-outline" id="testiMoreBtn" onclick="showMoreTestimonials()">Zobacz więcej opinii</button></div>
+  </div>
+</section>
+
+<section class="ig-strip">
+  <div class="wrap">
+    <span class="eyebrow">Codzienność na Instagramie</span>
+    <h2 class="section-title">Zajrzyj za kulisy</h2>
+    <p class="section-lead" style="margin-left:auto;margin-right:auto;text-align:center;">Więcej krótkich porad, nagrań z treningów i psich historii publikuję na Instagramie.</p>
+    <div class="ig-grid" id="igGrid"></div>
+    <div class="ig-links">
+      <a class="btn btn-primary" href="https://www.instagram.com/psigody/" target="_blank" rel="noopener">📷 @psigody</a>
+      <a class="btn btn-outline" href="https://www.instagram.com/dogsland_wroclaw/" target="_blank" rel="noopener">📷 Dogsland Wrocław</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="blog">
+  <div class="wrap">
+    <span class="eyebrow">Porady</span>
+    <h2 class="section-title">Z bloga</h2>
+    <p class="section-lead">Krótkie, praktyczne wskazówki o komunikacji z psem — bez straszenia, za to z konkretami.</p>
+    <div class="blog-grid" id="blogGrid"></div>
+  </div>
+</section>
+
+<section class="section alt" id="faq">
+  <div class="wrap">
+    <span class="eyebrow" style="text-align:center;display:block;">Pytania</span>
+    <h2 class="section-title" style="text-align:center;">Najczęstsze pytania</h2>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<section class="section" id="kontakt">
+  <div class="wrap">
+    <span class="eyebrow">Kontakt</span>
+    <h2 class="section-title">Umówmy się na pierwszą rozmowę</h2>
+    <p class="section-lead">Napisz kilka słów o swoim psie — odezwę się i wspólnie ustalimy dalsze kroki.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Studio Psigody</h3>
+        <div class="contact-row">📍 ul. Króla Lwa 21/37, Wrocław</div>
+        <div class="contact-row">📞 531 648 914</div>
+        <div class="contact-row">✉️ pies@chojrak.pl</div>
+        <table class="hours-table">
+          <tr><td>Pon – Pt</td><td>9:00 – 19:00</td></tr>
+          <tr><td>Sobota</td><td>10:00 – 14:00</td></tr>
+          <tr><td>Niedziela</td><td>zamknięte</td></tr>
+        </table>
+        <div class="contact-map">📍</div>
+      </div>
+      <div class="contact-form-wrap">
+        <form id="contactForm" onsubmit="submitContact(event)">
+          <div class="form-row"><label>Imię i nazwisko</label><input type="text" required placeholder="Jak się do Ciebie zwracać?"></div>
+          <div class="form-row"><label>Telefon lub e-mail</label><input type="text" required placeholder="np. 600 000 000"></div>
+          <div class="form-row"><label>Wybierz usługę</label><select id="serviceSelect"><option value="">Nie wiem jeszcze — konsultacja wstępna</option></select></div>
+          <div class="form-row">
+            <label>Dogodny dzień</label>
+            <div class="slot-chips" id="dateChips"></div>
+          </div>
+          <div class="form-row">
+            <label>Dogodna godzina</label>
+            <div class="slot-chips" id="timeChips"></div>
+          </div>
+          <div class="form-row"><label>Wiadomość</label><textarea placeholder="Opowiedz krótko o swoim psie i z czym potrzebujecie pomocy…"></textarea></div>
+          <button type="submit" class="btn btn-primary btn-block">Wyślij zapytanie</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="big">🐾💌</div>
+          <div style="font-weight:800;margin-bottom:6px;">Dziękujemy za wiadomość!</div>
+          <div style="font-size:13.5px;color:var(--text-2);" id="formSuccessNote">Odezwiemy się w ciągu 24h.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col" style="max-width:260px;">
+        <div class="footer-logo">Psigody</div>
+        <div style="font-size:13.5px;color:var(--text-2);line-height:1.6;">Behawiorystka i trenerka psów. Wrocław · pozytywna komunikacja, trening bez strachu i przymusu.</div>
+      </div>
+      <div class="footer-col">
+        <h4>Nawigacja</h4>
+        <a href="#metoda">O mnie</a><a href="#uslugi">Usługi</a><a href="#opinie">Opinie</a><a href="#blog">Porady</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <a href="#kontakt">pies@chojrak.pl</a><a href="#kontakt">531 648 914</a><a href="#kontakt">ul. Króla Lwa 21/37, Wrocław</a>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <a href="https://www.instagram.com/psigody/" target="_blank" rel="noopener">Instagram @psigody</a>
+        <a href="https://www.instagram.com/dogsland_wroclaw/" target="_blank" rel="noopener">Instagram Dogsland</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Psigody Wrocław — koncepcyjna makieta strony internetowej.</div>
+  </div>
+</footer>
+
+<button id="backTop" onclick="scrollToId('hero')">↑</button>
+<div id="toast"></div>
+
+<div class="modal-overlay" id="articleModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('articleModal')">✕</button>
+    <div class="modal-inner">
+      <div class="modal-thumb" id="artEmoji"></div>
+      <h2 id="artTitle"></h2>
+      <div class="modal-tags" id="artTags"></div>
+      <p id="artBody"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+const CONTENT = {
+  hero: { stats: [ {value:"312", label:"zadowolonych psów"}, {value:"8 lat", label:"doświadczenia"}, {value:"Lata melanży", label:"3 dekady w branży"} ] },
+  metoda: {
+    title: "Moja metoda: słucham psa, zanim zacznę go uczyć",
+    intro: "Nie znajdziesz tu bycia „alfą”, szarpania smyczą ani straszenia. Jest za to ciekawość, cierpliwość i mnóstwo szacunku dla tego, co pies próbuje nam powiedzieć — bo trening to nie pokaz siły, tylko rozmowa, w której obie strony się rozumieją.",
+    paragraphs: [
+      "Wszystko, co robię, opiera się na jednej prostej zasadzie: zachowania, które się opłacają, powtarzają się częściej. Zamiast szukać, za co psa ukarać, szukam momentu, w którym robi coś dobrze — i właśnie to nagradzam. Różnica jest fundamentalna: pies uczy się, bo chce, a nie dlatego, że boi się konsekwencji.",
+      "Zanim zaczniemy jakikolwiek trening, uczę się czytać Twojego psa — jego uszy, ogon, spojrzenie, drobne ziewnięcia czy odwracanie głowy, czyli tak zwane sygnały uspokajające. One mówią nam, czy pies czuje się bezpiecznie, czy jest już blisko granicy swojego komfortu. Dopiero gdy pies ufa, że nic złego go nie spotka, jest w stanie naprawdę się czegoś nauczyć.",
+      "W praktyce oznacza to zero krzyku, zero przymusu i zero pokazywania psu, kto tu rządzi. Ale force-free to nie to samo co wychowanie bez zasad — granice są równie ważne, tylko trzymamy się ich konsekwentnie dzięki dobrej komunikacji, a nie strachowi. Twój pies ma prawo się pomylić i czasem powiedzieć „nie teraz” — a moim zadaniem jest to uszanować i znaleźć inną drogę do celu."
+    ],
+    principles: [
+      { emoji:"🐾", title:"Pies ma głos", text:"Każde zachowanie to komunikat, dlatego zanim zaczniemy trening, uważnie czytamy mowę ciała i sygnały uspokajające psa." },
+      { emoji:"🍖", title:"Nagroda, nie kara", text:"Uczymy psa, co ma robić, nagradzając to, na czym nam zależy — kara niczego nie uczy, tylko budzi strach." },
+      { emoji:"🧠", title:"Wiedza, nie mity", text:"Opieram pracę na aktualnej wiedzy z zoopsychologii i etologii, a nie na przestarzałych teoriach o „byciu alfą”." },
+      { emoji:"🤝", title:"Zaufanie zamiast uległości", text:"Buduję relację oparta na zaufaniu i współpracy — pies posłuszny ze strachu to nie to samo, co pies, który naprawdę Ci ufa." }
+    ]
+  },
+  proces: [
+    { emoji:"📞", title:"Kontakt i wywiad", text:"Piszesz do mnie i opowiadasz o swoim psie oraz o tym, z czym się mierzycie." },
+    { emoji:"🔍", title:"Obserwacja i konsultacja", text:"Poznaję Was, obserwuję psa i analizuję sytuację od podszewki." },
+    { emoji:"📝", title:"Indywidualny plan", text:"Dostajesz jasny, zrozumiały plan działania dopasowany do psa i Waszego tempa." },
+    { emoji:"🐾", title:"Trening i wsparcie", text:"Pracujemy razem, aż osiągniecie cel — z pełnym wsparciem na każdym etapie." }
+  ],
+  services: [
+    { emoji:"🐾", name:"Konsultacja indywidualna", description:"Spotykamy się u Was w domu albo na spacerze, żeby zobaczyć Waszą codzienność na żywo, a nie w teorii. Wspólnie szukamy przyczyny trudnego zachowania i układamy plan, który naprawdę pasuje do Was obojga.", duration:"ok. 90 minut", priceFrom:"od 250 zł" },
+    { emoji:"🐕‍🦺", name:"Trening grupowy", description:"Małe grupy, dużo zabawy i nagród — psy uczą się w swoim tempie, bez porównywania i presji. Przy okazji oswajają się z obecnością innych psów, a Ty zyskujesz pewność w komunikacji ze swoim.", duration:"60 minut, kurs 6 spotkań", priceFrom:"od 480 zł" },
+    { emoji:"🐶", name:"Pakiet startowy dla szczeniaka", description:"Komplet wiedzy na pierwsze tygodnie z czworonożnym maluchem — socjalizacja, gryzienie, samotność w domu i budowanie dobrych nawyków, zanim te złe zdążą się utrwalić.", duration:"4 spotkania w ciągu miesiąca", priceFrom:"od 690 zł" },
+    { emoji:"💜", name:"Praca z lękiem, reaktywnością i agresją", description:"Dla psów, które reagują strachem, szczekaniem czy warczeniem — i dla opiekunów, którzy czują się z tym samotni. Pracujemy metodami force-free, w tempie Twojego psa, bez oceniania i bez pośpiechu.", duration:"konsultacja 120 min + plan długoterminowy", priceFrom:"od 320 zł" },
+    { emoji:"🤸", name:"Fitness i fizjoterapia psów", description:"Ćwiczenia wzmacniające mięśnie i poprawiające równowagę — świetne po kontuzji, dla seniorów albo dla psów, które lubią wyzwania na ciało i głowę. Rekreacyjne agility w bezpiecznej, dopasowanej wersji.", duration:"45 minut", priceFrom:"od 180 zł" },
+    { emoji:"🌿", name:"Warsztaty weekendowe", description:"Tematyczne spotkania stacjonarne — mowa ciała psa, zabawy węchowe, spacery na luźnej smyczy — dla wszystkich, którzy chcą zgłębić temat. Dużo praktyki, minimum teorii, zero stresu.", duration:"3–4 godziny", priceFrom:"od 220 zł" },
+    { emoji:"💻", name:"Konsultacja online", description:"Dla osób spoza Wrocławia i tych, którzy wolą zacząć od kanapy. Omawiamy sytuację, oglądamy nagrania Twojego psa i wychodzisz z rozmowy z konkretnym planem do wdrożenia w domu.", duration:"60 minut", priceFrom:"od 150 zł" }
+  ],
+  testimonials: [
+    { name:"Ola", dog:"Zosia", text:"Zosia bała się dosłownie wszystkiego — ludzi, odkurzacza, własnego cienia. Po kilku miesiącach wspólnej pracy pierwszy raz zobaczyłam, jak się rozluźnia na spacerze i sama podchodzi powąchać kogoś nowego. Żadnego zmuszania na siłę — tylko cierpliwość i mnóstwo małych sukcesów.", stars:5 },
+    { name:"Michał", dog:"Burek", text:"Wzięliśmy pakiet startowy dla szczeniaka, bo nie mieliśmy pojęcia, od czego zacząć. Dzięki temu chyba uniknęliśmy połowy błędów, które inaczej byśmy popełnili, a Burek uczy się jak burza, bo dla niego to zabawa, a nie musztra.", stars:5 },
+    { name:"Ewa", dog:"Rex", text:"Rex szalał na widok każdego psa na smyczy, a ja się przy tym strasznie stresowałam. Pokazano mi, że liczy się nie zmuszanie go do grzeczności, tylko czytanie jego sygnałów i praca z dystansem — teraz mijamy inne psy dużo spokojniej.", stars:5 },
+    { name:"Barbara", dog:"Fafik", text:"Fafik ma trzynaście lat i bałam się, że jest już za stary na jakąkolwiek naukę. Delikatna fizjoterapia i proste ćwiczenia na kontrolę ciała naprawdę mu pomogły — wstaje lżej i chętniej chodzi na spacery.", stars:4 },
+    { name:"Tomek", dog:"Bruno", text:"Bruno trafił do nas ze schroniska z całym bagażem złych doświadczeń i pierwsze tygodnie były naprawdę trudne. Konsultacje online okazały się strzałem w dziesiątkę — mogliśmy pracować w jego tempie i powoli zaczął nam ufać.", stars:5 },
+    { name:"Agnieszka", dog:"Nera", text:"Nera ma energii na trzy psy, więc zapisałyśmy się na rekreacyjne agility i zajęcia z kontroli ciała. Genialnie połączone z pozytywnym podejściem — żadnego poganiania, a Nera biega z czystej radości, nie ze strachu przed pomyłką.", stars:4 }
+  ],
+  blog: [
+    { emoji:"😌", topic:"Sygnały uspokajające", excerpt:"Ziewanie, odwracanie głowy, oblizywanie nosa — to nie przypadek.", body:"Ziewanie, odwracanie głowy, oblizywanie nosa, powolne ruchy, nagłe zamrożenie w miejscu... To nie przypadek ani „humory” — to sygnały uspokajające, czyli język, którym psy próbują rozładować napięcie i uniknąć konfliktu. Wasz pies mówi do was właściwie cały czas, tylko rzadko mamy okazję nauczyć się go czytać. Im szybciej zauważycie te subtelne znaki, tym łatwiej zapobiec eskalacji do warczenia czy szczekania.", tags:"#sygnałyuspokajające #mowaciałapsów #treningbezprzymusu" },
+    { emoji:"🍖", topic:"Podstawy pozytywnego wzmacniania", excerpt:"Nagradzaj to, co chcesz zobaczyć więcej.", body:"Pozytywne wzmacnianie brzmi jak skomplikowany termin, a w praktyce to jedna z najprostszych rzeczy na świecie: nagradzacie zachowanie, które chcecie widzieć częściej. To nie jest przekupywanie ani rozpieszczanie — chodzi o to, żeby nauka była dla psa opłacalna i przyjemna, a nie oparta na strachu przed konsekwencją. Im szybciej i konkretniej nagrodzicie dobre zachowanie, tym szybciej się utrwali.", tags:"#pozytywnewzmacnianie #forcefree #edukacjapsów" },
+    { emoji:"🐣", topic:"Okno socjalizacji szczeniaka", excerpt:"Między 3. a 16. tygodniem szczeniak chłonie świat jak gąbka.", body:"Między 3. a 16. tygodniem życia szczeniak chłonie świat jak gąbka — to tzw. okno socjalizacji, czyli czas, kiedy najłatwiej oswoić go z nowymi bodźcami bez lęku. To nie jest zasada „im więcej psów i ludzi, tym lepiej” — to spokojne, kontrolowane doświadczanie świata w tempie akceptowanym przez szczeniaka, z możliwością wycofania się, gdy czuje się przytłoczony.", tags:"#socjalizacjaszczeniaka #szczeniak #pakietstartowy" },
+    { emoji:"🦮", topic:"Luźna smycz", excerpt:"Ciągnięcie na smyczy to jeden z najczęstszych powodów wizyt.", body:"Ciągnięcie na smyczy to jeden z najczęstszych powodów, dla których ludzie proszą o pomoc — i da się to zmienić bez szarpania i bez „korekcyjnych” obroży. Pies ciągnie, bo to działa. Sekret polega na tym, żeby ciągnięcie przestało się opłacać, a chodzenie przy luźnej smyczy zaczęło prowadzić do celu — konsekwentnie, za każdym razem.", tags:"#luźnasmycz #spacerzpsem #chodzenienasmyczy" },
+    { emoji:"🚪", topic:"Lęk separacyjny", excerpt:"To nie złośliwość — to prawdziwa panika psa, który zostaje sam.", body:"Zniszczone drzwi czy szczekanie pod nieobecność to nie złośliwość ani „zemsta”. To najczęściej lęk separacyjny — prawdziwa, fizjologiczna panika psa, który zostaje sam. Karanie za zniszczenia po powrocie do domu nie tylko nie pomaga, ale często pogłębia problem. Praca nad tym to zwykle powolny proces stopniowego oswajania z nieobecnością, małymi krokami.", tags:"#lękseparacyjny #zaburzenialękowepsów #forcefree" },
+    { emoji:"👃", topic:"Węszenie i wzbogacanie środowiska", excerpt:"15 minut węszenia męczy psa bardziej niż godzina biegania.", body:"15 minut węszenia potrafi zmęczyć psa bardziej niż godzinna, energiczna bieganina. Nos psa to jego najważniejszy zmysł, a węszenie naturalnie wycisza układ nerwowy zamiast go nakręcać. Nie trzeba drogiego sprzętu — wystarczy rozsypać smakołyki w trawie albo urządzić w domu prostą „matę węchową”.", tags:"#nosework #węszenie #enrichmentdlapsów" },
+    { emoji:"🐽", topic:"Oswajanie z kagańcem", excerpt:"Kaganiec to nie kara — to narzędzie bezpieczeństwa.", body:"Kaganiec to nie kara ani wyrok dla „niebezpiecznego psa” — to narzędzie bezpieczeństwa, które może uratować życie waszemu psu, na przykład u weterynarza. Uczymy psa, że kaganiec to zapowiedź dobrych rzeczy: najpierw sam widok, potem wsadzanie nosa po smakołyk, stopniowo wydłużany czas noszenia, zawsze w tempie psa.", tags:"#treningkagańca #muzzletraining #bezpieczeństwopsa" },
+    { emoji:"🚦", topic:"Zarządzanie psem reaktywnym", excerpt:"To komunikat „jest mi za blisko”, nie „zły charakter”.", body:"Reaktywność to nie agresja i nie „zły charakter” — to zwykle strach, frustracja albo nadmiar bodźców, z którymi pies nie potrafi sobie poradzić inaczej niż szczekaniem czy rzucaniem się na smyczy. Zanim zaczniemy uczyć nowych reakcji, najważniejsze jest zarządzanie: taka organizacja spacerów, żeby pies jak najrzadziej przekraczał próg swojej tolerancji.", tags:"#piesreaktywny #reaktywność #zarządzaniepsem" }
+  ]
+};
+
+const GRADIENTS = [
+  "linear-gradient(160deg,#E3A857,#C1694A)","linear-gradient(160deg,#E1637D,#8B6FB3)","linear-gradient(160deg,#8B6FB3,#6C8FC7)",
+  "linear-gradient(160deg,#7C9473,#E3A857)","linear-gradient(160deg,#C1694A,#E1637D)","linear-gradient(160deg,#6C8FC7,#7C9473)",
+  "linear-gradient(160deg,#E3A857,#8B6FB3)","linear-gradient(160deg,#E1637D,#C1694A)"
+];
+
+function scrollToId(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
+function showToast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove('show'),2400); }
+function toggleTheme(){ const root=document.documentElement; const isDark=root.getAttribute('data-theme')==='dark'; root.setAttribute('data-theme', isDark?'light':'dark'); document.getElementById('themeBtn').textContent = isDark?'🌙':'☀️'; }
+function toggleMobileMenu(){ document.getElementById('mobileMenu').classList.toggle('show'); }
+function closeMobileMenu(){ document.getElementById('mobileMenu').classList.remove('show'); }
+function openModal(id){ document.getElementById(id).classList.add('show'); document.body.style.overflow='hidden'; }
+function closeModal(id){ document.getElementById(id).classList.remove('show'); document.body.style.overflow=''; }
+document.querySelectorAll('.modal-overlay').forEach(ov=>ov.addEventListener('click', e=>{ if(e.target===ov) closeModal(ov.id); }));
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') document.querySelectorAll('.modal-overlay.show').forEach(ov=>closeModal(ov.id)); });
+
+function renderHero(){
+  document.getElementById('heroStats').innerHTML = CONTENT.hero.stats.map(s=>`<div class="hero-stat"><b>${s.value}</b><span>${s.label}</span></div>`).join('');
+}
+function renderMetoda(){
+  document.getElementById('metodaTitle').textContent = CONTENT.metoda.title;
+  document.getElementById('metodaIntro').textContent = CONTENT.metoda.intro;
+  document.getElementById('metodaParagraphs').innerHTML = CONTENT.metoda.paragraphs.map(p=>`<p>${p}</p>`).join('');
+  document.getElementById('principlesGrid').innerHTML = CONTENT.metoda.principles.map(pr=>`
+    <div class="principle-card reveal"><div class="principle-emoji">${pr.emoji}</div><div class="principle-title">${pr.title}</div><div class="principle-text">${pr.text}</div></div>`).join('');
+}
+function renderProces(){
+  document.getElementById('processGrid').innerHTML = CONTENT.proces.map((s,i)=>`
+    <div class="process-card reveal"><div class="process-num">${i+1}</div><div class="process-emoji">${s.emoji}</div><div class="process-title">${s.title}</div><div class="process-text">${s.text}</div></div>`).join('');
+}
+function renderServices(){
+  document.getElementById('servicesGrid').innerHTML = CONTENT.services.map(s=>`
+    <div class="service-card reveal">
+      <div class="service-emoji">${s.emoji}</div>
+      <div class="service-name">${s.name}</div>
+      <div class="service-desc">${s.description}</div>
+      <div class="service-meta"><span>⏱ ${s.duration}</span><span class="service-price">${s.priceFrom}</span></div>
+      <button class="btn btn-primary" onclick="bookService('${s.name.replace(/'/g,"\\'")}')">Umów →</button>
+    </div>`).join('');
+  const sel = document.getElementById('serviceSelect');
+  sel.innerHTML = '<option value="">Nie wiem jeszcze — konsultacja wstępna</option>' + CONTENT.services.map(s=>`<option value="${s.name}">${s.emoji} ${s.name}</option>`).join('');
+}
+function bookService(name){
+  document.getElementById('serviceSelect').value = name;
+  scrollToId('kontakt');
+  showToast('Wybrano: ' + name + ' — uzupełnij formularz poniżej 🐾');
+}
+let testiShown = 3;
+function renderTestimonials(){
+  document.getElementById('testiGrid').innerHTML = CONTENT.testimonials.map((t,i)=>`
+    <div class="testi-card ${i<testiShown?'show':''}" data-idx="${i}">
+      <div class="testi-top"><div class="testi-avatar">${t.name[0]}</div><div><div class="testi-name">${t.name}</div><div class="testi-dog">🐕 ${t.dog}</div></div></div>
+      <div class="testi-stars">${'★'.repeat(t.stars)}${'☆'.repeat(5-t.stars)}</div>
+      <div class="testi-text">„${t.text}”</div>
+    </div>`).join('');
+  document.getElementById('testiMoreBtn').style.display = testiShown >= CONTENT.testimonials.length ? 'none' : 'inline-flex';
+}
+function showMoreTestimonials(){ testiShown = CONTENT.testimonials.length; renderTestimonials(); }
+function renderIgStrip(){
+  document.getElementById('igGrid').innerHTML = CONTENT.blog.slice(0,6).map((p,i)=>`<div class="ig-tile" style="background:${GRADIENTS[i % GRADIENTS.length]}">${p.emoji}</div>`).join('');
+}
+function renderBlog(){
+  document.getElementById('blogGrid').innerHTML = CONTENT.blog.map((p,i)=>`
+    <div class="blog-card reveal" onclick="openArticle(${i})">
+      <div class="blog-thumb" style="background:${GRADIENTS[i % GRADIENTS.length]}">${p.emoji}</div>
+      <div class="blog-body"><div class="blog-topic">${p.topic}</div><div class="blog-excerpt">${p.excerpt}</div><div class="blog-readmore">Czytaj więcej →</div></div>
+    </div>`).join('');
+}
+function openArticle(i){
+  const p = CONTENT.blog[i];
+  document.getElementById('artEmoji').textContent = p.emoji;
+  document.getElementById('artTitle').textContent = p.topic;
+  document.getElementById('artTags').textContent = p.tags;
+  document.getElementById('artBody').textContent = p.body;
+  openModal('articleModal');
+}
+const FAQS = [
+  { q:"Na czym dokładnie polega Wasza metoda pracy z psem?", a:"Pracujemy wyłącznie w oparciu o pozytywne wzmacnianie i trening bez przymusu (force-free, fear-free) — uczymy psa, nagradzając to, co robi dobrze, zamiast karać za błędy. Zero szarpania smyczą, zero „bycia alfa”, zero krzyku czy zastraszania. Uczymy Cię też czytać mowę ciała psa, żeby reagować, zanim dojdzie do eskalacji." },
+  { q:"Po jakim czasie zobaczymy efekty?", a:"To zależy od psa i problemu. Podstawowe komendy i poprawę komunikacji często widać już po 2–3 sesjach. Przy pracy z lękiem, reaktywnością czy agresją mówimy raczej w tygodniach i miesiącach — bo zmieniamy emocje psa, nie tylko zachowanie, a tego nie da się przyspieszyć na siłę." },
+  { q:"Mój pies jest „trudny” — reaguje agresją na inne psy lub ludzi. Da się coś zrobić?", a:"Tak, to dokładnie ten typ wyzwań, w którym czuję się najlepiej. Nie ma „trudnych psów” — są psy, które komunikują dyskomfort czy strach w jedyny dostępny im sposób. Moim zadaniem jest zrozumieć źródło i stopniowo, bez presji, zmieniać reakcję psa na dany bodziec." },
+  { q:"Ile to kosztuje?", a:"Konsultacja indywidualna to punkt wyjścia niezależnie od tego, z czym przychodzicie — podczas niej poznaję Was i sytuację, a potem proponuję dalszy plan. Ceny konkretnych usług i pakietów znajdziesz w sekcji Usługi — różnią się w zależności od formy i długości współpracy." },
+  { q:"Działacie tylko we Wrocławiu? Da się pracować zdalnie?", a:"Bazujemy we Wrocławiu i tu odbywa się większość konsultacji stacjonarnych oraz treningów grupowych. Jeśli mieszkasz dalej, konsultacje online sprawdzają się naprawdę dobrze, szczególnie przy pracy nad podstawami i planem behawioralnym." },
+  { q:"Mam malutkiego szczeniaka albo już starszego psa — czy dla obu coś macie?", a:"Jak najbardziej. Dla szczeniaków mamy pakiet startowy — socjalizacja, podstawy, dobre nawyki od pierwszych tygodni. Starsze psy też świetnie się uczą — u nich sporo uwagi poświęcamy stronie fizycznej: kontroli ciała, delikatnemu fitnessowi i fizjoterapii." }
+];
+function renderFAQ(){
+  document.getElementById('faqList').innerHTML = FAQS.map((f,i)=>`
+    <div class="faq-item" id="faq-${i}">
+      <div class="faq-q" onclick="toggleFaq(${i})"><span>${f.q}</span><span class="chev">⌄</span></div>
+      <div class="faq-a"><div class="faq-a-inner">${f.a}</div></div>
+    </div>`).join('');
+}
+function toggleFaq(i){ document.getElementById('faq-'+i).classList.toggle('open'); }
+const TIME_SLOTS = ["9:00","11:00","13:00","16:00","18:00"];
+const DOW_SHORT = ["Nd","Pn","Wt","Śr","Cz","Pt","So"];
+const DOW_FULL = ["niedzielę","poniedziałek","wtorek","środę","czwartek","piątek","sobotę"];
+let selectedDate = null, selectedTime = null, AVAILABLE_DAYS = [];
+function renderDateChips(){
+  const days = [];
+  let d = new Date();
+  while(days.length < 5){
+    d = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1);
+    if(d.getDay() === 0) continue;
+    days.push(d);
+  }
+  AVAILABLE_DAYS = days;
+  document.getElementById('dateChips').innerHTML = days.map((day,i)=>
+    `<button type="button" class="slot-chip" onclick="selectDate(${i}, this)">${DOW_SHORT[day.getDay()]} ${day.getDate()}.${String(day.getMonth()+1).padStart(2,'0')}</button>`
+  ).join('');
+}
+function selectDate(i, el){
+  document.querySelectorAll('#dateChips .slot-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  selectedDate = AVAILABLE_DAYS[i];
+}
+function renderTimeChips(){
+  document.getElementById('timeChips').innerHTML = TIME_SLOTS.map(t=>
+    `<button type="button" class="slot-chip" onclick="selectTime('${t}', this)">${t}</button>`
+  ).join('');
+}
+function selectTime(t, el){
+  document.querySelectorAll('#timeChips .slot-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  selectedTime = t;
+}
+function submitContact(e){
+  e.preventDefault();
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').classList.add('show');
+  const note = document.getElementById('formSuccessNote');
+  note.textContent = (selectedDate && selectedTime)
+    ? `Zaproponowany termin: ${DOW_FULL[selectedDate.getDay()]}, ${selectedDate.getDate()}.${String(selectedDate.getMonth()+1).padStart(2,'0')} o ${selectedTime}. Potwierdzimy dostępność w ciągu 24h.`
+    : 'Odezwiemy się w ciągu 24h.';
+}
+
+window.addEventListener('scroll', ()=>{
+  document.getElementById('topnav').classList.toggle('scrolled', window.scrollY > 8);
+  document.getElementById('backTop').classList.toggle('show', window.scrollY > 500);
+  document.getElementById('navCta').style.display = window.scrollY > 340 ? 'inline-flex' : 'none';
+});
+
+renderHero(); renderMetoda(); renderProces(); renderServices(); renderTestimonials(); renderIgStrip(); renderBlog(); renderFAQ(); renderDateChips(); renderTimeChips();
+
+const io = new IntersectionObserver((entries)=>{ entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); }, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
